@@ -9,3 +9,5 @@ build/
 .netlify/
 .env.local
 .env.**.local
+pnpm-lock.yaml
+.pnpm-debug.log

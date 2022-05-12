@@ -124,12 +124,8 @@ export const head: HeadConfig = {}
 export const header: HeaderConfig = {
   nav: [
     {
-      text: 'Get Started',
-      link: '/hello-world'
-    },
-    {
-      text: 'Elements',
-      link: '/hello-world/elements'
+      text: 'About',
+      link: '/about'
     }
   ]
 }
@@ -152,15 +148,15 @@ export const date: DateConfig = {
     locales: 'en-US',
     options: {
       weekday: 'short',
-      month: 'short',
+      month: 'long',
       day: 'numeric'
     }
   },
   toUpdatedString: {
     locales: 'en-US',
     options: {
-      year: '2-digit',
-      weekday: 'long',
+      // year: 'numeric',
+      weekday: 'short',
       month: 'short',
       day: 'numeric'
     }
