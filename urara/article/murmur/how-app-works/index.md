@@ -36,7 +36,7 @@ Backend泛指用戶睇唔到嘅嘢，例如用戶㩒完登入之後，系統認�
 
 或者直接啲，你打開瀏覽器嘅Network Tab（Win: F12, Mac: Option + CMD + I），就會發現大部分互動都會Trigger network request。
 
-![Lihkg-web](/article/1/assets/lihkg-network.png)
+![Lihkg-web](/article/murmur/how-app-works/assets/lihkg-network.png)
 
 可以睇得出，所有互動都係不斷重複緊步驟 1 至 5 所得出嘅結果。
 
