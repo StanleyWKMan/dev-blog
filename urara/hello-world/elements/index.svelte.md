@@ -2,7 +2,9 @@
 title: Elements
 date: 2021-12-12
 priority: 501
-tags: ['Urara', 'Elements']
+# tags: ['Urara', 'Elements']
+flags:
+    - unlisted
 ---
 
 ## Contents
