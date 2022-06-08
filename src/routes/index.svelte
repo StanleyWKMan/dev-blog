@@ -4,16 +4,18 @@
   import { page } from '$app/stores'
   import { browser } from '$app/env'
   import { posts as storedPosts, tags as storedTags } from '$lib/stores/posts'
+  import { title as storedTitle } from '$lib/stores/title'
   import Head from '$lib/components/head.svelte'
   import Footer from '$lib/components/footer.svelte'
   import Post from '$lib/components/index_post.svelte'
   import Profile from '$lib/components/index_profile.svelte'
-  import IconTrash from '~icons/heroicons-outline/trash'
 
   let allPosts: Urara.Post[]
   let allTags: string[]
   let loaded: boolean
   let [posts, tags, years] = [[], [], []]
+
+  storedTitle.set('')
 
   $: storedPosts.subscribe(
     storedPosts => (allPosts = (storedPosts as Urara.Post[]).filter(post => !post.flags?.includes('unlisted')))
@@ -21,7 +23,7 @@
 
   $: storedTags.subscribe(storedTags => (allTags = storedTags as string[]))
 
-  $: if (posts.length > 1) years = [new Date(posts[0].published ?? posts[0].created).toJSON().substring(0, 4)]
+  $: if (posts.length > 1) years = [new Date(posts[0].published ?? posts[0].created).getFullYear()]
 
   $: if (tags) {
     posts = !tags ? allPosts : allPosts.filter(post => tags.every(tag => post.tags?.includes(tag)))
@@ -81,7 +83,7 @@
               {/each}]
             </h2>
             <button on:click={() => (tags = [])} class="btn btn-secondary">
-              <IconTrash class="inline-block w-6 h-6 mr-2" />
+              <span class="i-heroicons-outline-trash mr-2" />
               tags = []
             </button>
           </div>
@@ -93,7 +95,7 @@
         itemscope
         itemtype="https://schema.org/Blog">
         {#each posts as post, index}
-          {@const year = (post.published ?? post.created).substring(0, 4)}
+          {@const year = new Date(post.published ?? post.created).getFullYear()}
           {#if !years.includes(year)}
             <div
               in:fly={{ x: index % 2 ? 100 : -100, duration: 300, delay: 500 }}
