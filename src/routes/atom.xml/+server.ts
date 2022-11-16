@@ -12,6 +12,10 @@ const render = (
   <title><![CDATA[${site.title}]]></title>${site.subtitle ? `\n  <subtitle><![CDATA[${site.subtitle}]]></subtitle>` : ''}${
   favicon ? `\n  <icon>${favicon.src}</icon>` : ''
 }
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link href="${site.protocol + site.domain}" />
   <link href="${site.protocol + site.domain}/atom.xml" rel="self" type="application/atom+xml" />${
   feed.hubs?.map(hub => `\n  <link href="${hub}" rel="hub"/>`).join('') ?? ''
