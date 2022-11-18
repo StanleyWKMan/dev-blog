@@ -1,19 +1,20 @@
 ---
-title: '使用JavaMail及FreeMarker在Spring Boot發送電郵'
+title: '使用Spring Mail及FreeMarker發送電郵'
 created: 2022-11-17
 updated: 2022-11-17
 tags:
   - 'java'
   - 'spring-boot'
   - 'java-mail'
+  - 'spring-mail'
   - 'freemarker'
   - 'tutorial'
 ---
 
 
-## 咩係 JavaMail
+## 咩係 Spring Mail
 
-JavaMail
+Spring Mail
 
 ## 咩係 FreeMarker
 
@@ -38,11 +39,61 @@ spring:
 
 ```
 
-發送純文字Email
+## Implementation
 
-發送Html Email
+### 發送純文字Email
 
-## 複數SMTP senders
+```java title="MailServiceImpl.java"
+
+@Service // MVC格式，implement一個interface再寫implementation
+public class MailServiceImpl implements MailService {
+
+    // Autowired JavaMailSender
+    @Autowired private JavaMailSender mailSender;
+
+    // 定義發送者電郵地址，常見嘅有no-reply@email.com
+    private static final String SENDER_ADDRESS = "test-sender-3029@email.com";
+
+    // 發送純文字電郵
+    public void sendPlainTextEmail(String subject, String content, String... recipientEmailAddresses) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setSubject(subject); // 郵件標題
+        message.setFrom(SENDER_ADDRESS);
+        message.setTo(recipientEmailAddresses); // 收件人電郵地址
+        message.setText(content); // 郵件內容
+
+        this.mailSender.send(message);
+    }
+
+}
+```
+
+### 發送Html Email
+
+```java title="MailServiceImpl.java"
+@Service // MVC格式，implement一個interface再寫implementation
+public class MailServiceImpl implements MailService {
+
+    // Autowired JavaMailSender
+    @Autowired private JavaMailSender mailSender;
+
+    // 定義發送者電郵地址，常見嘅有no-reply@email.com
+    private static final String SENDER_ADDRESS = "test-sender-3029@email.com";
+
+    // 發送HTML Email
+    public void sendHtmlEmail(String subject, String htmlContent, String... recipientEmailAddresses) throws MessagingException {
+          MimeMessage mimeMessage = mailSender.createMimeMessage();
+          MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+          helper.setSubject(subject); // 郵件標題
+          helper.setFrom(SENDER_ADDRESS);
+          helper.setTo(recipientEmailAddresses); // 收件人電郵地址
+          helper.setText(htmlContent, true); // 使用Html格式的郵件內容
+          mailSender.send(mimeMessage);
+    }
+}
+```
+
+### 複數SMTP senders
 
 如果你想一個Application可以用多過一個嘅SMTP Sender去send email，你就無可以就咁喺```application.yml```度設定，需要到Code層面去起唔同Sender嘅Instance。
 
