@@ -21,7 +21,7 @@ export const post: PostConfig = {
             categoryID: 'DIC_kwDOHOzgE84CO9wZ',
             reactionsEnabled: true,
             lang: 'zh-TW',
-            theme: 'preferred_color_scheme'
+            theme: 'dark_dimmed'
           }
     }
 }
