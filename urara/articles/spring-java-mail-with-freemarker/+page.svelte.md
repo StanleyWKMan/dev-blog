@@ -2,6 +2,8 @@
 title: '使用Spring Mail及FreeMarker發送電郵'
 created: 2022-11-17
 updated: 2022-11-17
+flags:
+  - ''
 tags:
   - 'java'
   - 'spring-boot'
@@ -12,9 +14,10 @@ tags:
 ---
 
 
+
 ## 咩係 Spring Mail
 
-Spring Mail
+Spring Mail係Spring Framework入面一個基於Java Mail用嚟處理電郵嘅 Library。
 
 ## 咩係 FreeMarker
 
