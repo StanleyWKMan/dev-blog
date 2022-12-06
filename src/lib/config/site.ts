@@ -4,14 +4,14 @@ export const site: SiteConfig = {
   protocol: 'https://',
   domain: import.meta.env.URARA_SITE_DOMAIN ?? 'wingstako.dev',
   title: 'wingstako.dev',
-  subtitle: 'Sweet & Powerful SvelteKit Blog Template',
+  subtitle: 'Blog',
   lang: 'en-US',
   description: 'Powered by SvelteKit/Urara',
   author: {
     name: 'wingstako',
     avatar: '/assets/maskable@192.png',
     status: '🌸',
-    bio: 'lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    bio: '喺追求目標嘅道路上，<br>最容易唔記得嘅就係目標',
     metadata: [
       {
         icon: 'i-simple-icons-github',

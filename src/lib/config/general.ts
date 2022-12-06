@@ -33,16 +33,16 @@ export const header: HeaderConfig = {
   search: {
     provider: 'duckduckgo'
   },
-  // nav: [
-  //   {
-  //     text: 'Get Started',
-  //     link: '/hello-world'
-  //   },
-  //   {
-  //     text: 'Elements',
-  //     link: '/hello-world/elements'
-  //   }
-  // ]
+  nav: [
+    // {
+    //   text: 'Get Started',
+    //   link: '/hello-world'
+    // },
+    {
+      text: 'About',
+      link: '/about'
+    }
+  ]
 }
 
 export const footer: FooterConfig = {

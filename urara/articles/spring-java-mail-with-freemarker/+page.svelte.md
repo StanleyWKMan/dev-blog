@@ -11,9 +11,10 @@ tags:
   - 'spring-mail'
   - 'freemarker'
   - 'tutorial'
+summary: '學習用Spring Mail 及 FreeMarker 發送Styled Email'
 ---
 
-
+Github Repository: https://github.com/wingstako/spring-mail-freemarker-example
 
 ## 咩係 Spring Mail
 
@@ -108,16 +109,6 @@ public class MailServiceImpl implements MailService {
           mailSender.send(mimeMessage);
     }
 }
-```
-
-### 複數SMTP senders
-
-如果你想一個Application可以用多過一個嘅SMTP Sender去send email，你就唔可以就咁喺```application.yml```度設定，需要到Code層面去起唔同Sender嘅Instance。
-
-```java 
-
-
-
 ```
 
 ## FreeMarker Implemetation
@@ -248,14 +239,14 @@ public class MailServiceImplTest {
 
 ### 結果
 
-1. Plain text email
+#### 1. Plain text email
 
 ![plain text email](../../articles/spring-java-mail-with-freemarker/plain-text-email.png)
 
-2. Html Email
+#### 2. Html Email
 
 ![html email](../../articles/spring-java-mail-with-freemarker/html-email.png)
 
-3. Templated Email
+#### 3. Templated Email
 
 ![templated email](../../articles/spring-java-mail-with-freemarker/templated-email.png)
