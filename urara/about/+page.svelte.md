@@ -60,8 +60,8 @@ tags: []
 <summary><b>📱 Contacts</b></summary>
 
 <ul>
-<li> GitHub - https://github.com/wingstako </li>
-<li> Neocities - https://wingstako.neocities.org </li>
+<li> GitHub - <a href=" https://github.com/wingstako">https://github.com/wingstako </a></li>
+<li> Neocities - <a href="https://wingstako.neocities.org">https://wingstako.neocities.org </a> </li>
 <li> LinkedIn - <a href="https://www.linkedin.com/in/stanleywkman">https://www.linkedin.com/in/stanleywkman</a> </li>
 </ul>
 </details>
