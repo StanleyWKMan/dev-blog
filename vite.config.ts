@@ -1,11 +1,11 @@
 // vite define config
 import { defineConfig } from 'vite'
-// vite sveltekit
-import { sveltekit } from '@sveltejs/kit/vite'
 // vite plugin
 import UnoCSS from 'unocss/vite'
 import { presetTagify, presetIcons, extractorSvelte } from 'unocss'
-import { VitePWA } from 'vite-plugin-pwa'
+import { imagetools } from 'vite-imagetools'
+import { sveltekit as SvelteKit } from '@sveltejs/kit/vite'
+import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 // postcss & tailwindcss
 import TailwindCSS from 'tailwindcss'
 import tailwindConfig from './tailwind.config'
@@ -13,12 +13,17 @@ import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
 
 export default defineConfig({
-  mode: process.env.MODE || 'production',
   envPrefix: 'URARA_',
+  build: {
+    sourcemap: false,
+    rollupOptions: {
+      cache: false
+    }
+  },
   css: {
     postcss: {
       plugins: [
-        TailwindCSS(tailwindConfig as any) as any,
+        TailwindCSS(tailwindConfig),
         autoprefixer(),
         ...(process.env.NODE_ENV === 'production'
           ? [
@@ -32,7 +37,6 @@ export default defineConfig({
   },
   plugins: [
     UnoCSS({
-      mode: 'svelte-scoped',
       include: [/\.svelte$/, /\.md?$/, /\.ts$/],
       extractors: [extractorSvelte],
       presets: [
@@ -42,13 +46,16 @@ export default defineConfig({
         presetIcons({ scale: 1.5 })
       ]
     }),
-    VitePWA({
-      srcDir: './build',
-      outDir: './.svelte-kit/output/client',
+    imagetools(),
+    SvelteKit(),
+    SvelteKitPWA({
       registerType: 'autoUpdate',
+      manifest: false,
       scope: '/',
-      base: '/'
-    }),
-    sveltekit()
+      workbox: {
+        globPatterns: ['posts.json', '**/*.{js,css,html,svg,ico,png,webp,avif}'],
+        globIgnores: ['**/sw*', '**/workbox-*']
+      }
+    })
   ]
 })
