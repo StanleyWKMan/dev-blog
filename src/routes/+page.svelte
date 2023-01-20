@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { fly } from 'svelte/transition'
   import { page } from '$app/stores'
-  import { browser } from '$app/environment'
+  import { dev, browser } from '$app/environment'
   import { posts as storedPosts, tags as storedTags } from '$lib/stores/posts'
   import { title as storedTitle } from '$lib/stores/title'
   import Head from '$lib/components/head.svelte'
@@ -16,7 +16,6 @@
   import { initializeApp } from 'firebase/app'
   import { getAnalytics } from 'firebase/analytics'
   import { getPerformance } from 'firebase/performance'
-  import { building } from '$app/environment'
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -35,7 +34,7 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig)
 
-  if (building) {
+  if (!dev && browser) {
     const analytics = getAnalytics(app)
     const performance = getPerformance(app)
   }
