@@ -49,6 +49,7 @@ export default defineConfig({
     imagetools(),
     SvelteKit(),
     SvelteKitPWA({
+      outDir: '.svelte-kit/output/client',
       registerType: 'autoUpdate',
       manifest: false,
       scope: '/',
