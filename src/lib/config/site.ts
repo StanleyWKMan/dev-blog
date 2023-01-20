@@ -15,7 +15,7 @@ export const site: SiteConfig = {
     metadata: [
       {
         icon: 'i-simple-icons-github',
-        link: 'https://github.com/wingstako'
+        link: 'https://www.github.com/wingstako'
       },
       {
         icon: 'i-simple-icons-linkedin',
