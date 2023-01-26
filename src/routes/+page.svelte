@@ -2,44 +2,13 @@
   import { onMount } from 'svelte'
   import { fly } from 'svelte/transition'
   import { page } from '$app/stores'
-  import { dev, browser } from '$app/environment'
+  import { browser } from '$app/environment'
   import { posts as storedPosts, tags as storedTags } from '$lib/stores/posts'
   import { title as storedTitle } from '$lib/stores/title'
   import Head from '$lib/components/head.svelte'
   import Footer from '$lib/components/footer.svelte'
   import Post from '$lib/components/post_card.svelte'
   import Profile from '$lib/components/index_profile.svelte'
-
-  // ----- FIREBASE START ----- //
-
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from 'firebase/app'
-  import { getAnalytics } from 'firebase/analytics'
-  import { getPerformance } from 'firebase/performance'
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: 'AIzaSyD6UE0Cl-NNsveeBrAFYFMNHTYbrL41Ir8',
-    authDomain: 'wingstako-dev-blog.firebaseapp.com',
-    projectId: 'wingstako-dev-blog',
-    storageBucket: 'wingstako-dev-blog.appspot.com',
-    messagingSenderId: '738823241655',
-    appId: '1:738823241655:web:d4e230f5e1bc54213bb232',
-    measurementId: 'G-XXEDEX1PTF'
-  }
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig)
-
-  if (!dev && browser) {
-    const analytics = getAnalytics(app)
-    const performance = getPerformance(app)
-  }
-
-  // ----- FIREBASE END ----- //
 
   let allPosts: Urara.Post[]
   let allTags: string[]

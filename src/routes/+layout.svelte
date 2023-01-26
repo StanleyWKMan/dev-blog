@@ -8,6 +8,7 @@
   import Head from '$lib/components/head_static.svelte'
   import Header from '$lib/components/header.svelte'
   import Transition from '$lib/components/transition.svelte'
+  import { initializeFirebase } from '$lib/utils/firebase'
   import 'uno.css'
   import '../app.pcss'
 
@@ -29,6 +30,8 @@
         onRegisterError: error => console.error(error)
       })
   )
+
+  initializeFirebase()
 </script>
 
 <Head />

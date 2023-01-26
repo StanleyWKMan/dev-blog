@@ -3,7 +3,7 @@ import type { SiteConfig } from '$lib/types/site'
 export const site: SiteConfig = {
   protocol: 'https://',
   domain: import.meta.env.URARA_SITE_DOMAIN ?? 'wingstako.dev',
-  title: 'wingstako.dev',
+  title: './wingstako.dev',
   subtitle: '',
   lang: 'zh-HK',
   description: 'wingstako.dev喺一個以粵語入文，分享Tech嘢嘅地方。',
