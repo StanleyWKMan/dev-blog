@@ -34,7 +34,7 @@
   // const source: Image[] = sources[`/static${src}`] as any
 </script>
 
-<img {src} {alt} class={className ?? 'rounded-lg my-2'} {loading} {decoding} />
+<img {src} {alt} class={className ?? 'rounded-lg my-2 scale-90'} {loading} {decoding} />
 
 <!-- <picture>
   <source srcset={source.map(({ src, w }) => `${src} ${w}w`).join(', ')}  /> 
