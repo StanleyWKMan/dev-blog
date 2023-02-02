@@ -241,12 +241,12 @@ public class MailServiceImplTest {
 
 #### 1. Plain text email
 
-![plain text email](../../spring-java-mail-with-freemarker/plain-text-email.png)
+![plain text email](../../articles/spring-java-mail-with-freemarker/plain-text-email.png)
 
 #### 2. Html Email
 
-![html email](../../spring-java-mail-with-freemarker/html-email.png)
+![html email](../../articles/spring-java-mail-with-freemarker/html-email.png)
 
 #### 3. Templated Email
 
-![templated email](../../spring-java-mail-with-freemarker/templated-email.png)
+![templated email](../../articles/spring-java-mail-with-freemarker/templated-email.png)

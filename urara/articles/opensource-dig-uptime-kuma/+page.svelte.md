@@ -5,7 +5,7 @@ updated: 2023-01-26
 flags: []
 tags: ['docker', 'opensource', 'monitoring']
 # summary: 唔駛再自己Check網站狀態 
-image: ../../opensource-dig-uptime-kuma/demo.png
+image: ../../articles/opensource-dig-uptime-kuma/demo.png
 
 ---
 
@@ -52,15 +52,15 @@ pm2 start server/server.js --name uptime-kuma
 
 1. 第一次入要建立Account
 
-![Setup](../../opensource-dig-uptime-kuma/setup-0.png)
+![Setup](../../articles/opensource-dig-uptime-kuma/setup-0.png)
 
 2. 之後透過左上角"Add New Monitor"，喺Url輸入你想mon住嘅網站
 
-![Setup](../../opensource-dig-uptime-kuma/setup-1.png)
+![Setup](../../articles/opensource-dig-uptime-kuma/setup-1.png)
 
 3. 可以見到Monitor Type支援多種模式，最常用係HTTP(s)
 
-![Setup](../../opensource-dig-uptime-kuma/setup-2.png)
+![Setup](../../articles/opensource-dig-uptime-kuma/setup-2.png)
 
 1. 如果你想healthcheck backend services，可以改Method同Payload
 2. Save之後就會開始運作
@@ -80,15 +80,15 @@ npm run reset-password
 
 1. 喺 https://api.slack.com/apps?new_app=1 建立Slack Application
 
-![Slack notification - create slack application](../../opensource-dig-uptime-kuma/slack-noti-0.png)
+![Slack notification - create slack application](../../articles/opensource-dig-uptime-kuma/slack-noti-0.png)
 
 2. 啟用Incoming Webhook
 
-![Slack notification - activate webhook](../../opensource-dig-uptime-kuma/slack-noti-1.png)
+![Slack notification - activate webhook](../../articles/opensource-dig-uptime-kuma/slack-noti-1.png)
 
 3. Click **Add New Webhook to Workspace**
 
-![Slack notification - add webhook to workspace](../../opensource-dig-uptime-kuma/slack-noti-2.png)
+![Slack notification - add webhook to workspace](../../articles/opensource-dig-uptime-kuma/slack-noti-2.png)
 
 4. 揀一個接收通知嘅Channel
 
@@ -96,8 +96,8 @@ npm run reset-password
 5. 複製生成嘅Webhook URL
 
 
-![Slack notification - copy webhook url](../../opensource-dig-uptime-kuma/slack-noti-3.png)
+![Slack notification - copy webhook url](../../articles/opensource-dig-uptime-kuma/slack-noti-3.png)
 
 6. 喺Uptime Kuma，入**Settings** -> **Notifications** -> **Setup Notification**，Notification Type揀Slack，然後貼上啱啱複製嘅Webhook URL
 
-![Slack notification - paste webhook url](../../opensource-dig-uptime-kuma/slack-noti-4.png)
+![Slack notification - paste webhook url](../../articles/opensource-dig-uptime-kuma/slack-noti-4.png)
