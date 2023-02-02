@@ -19,8 +19,7 @@ export default defineConfig({
     adapter: adapterStatic({
       pages: 'public',
       assets: 'public',
-      fallback: undefined,
-      precompress: false
+      fallback: undefined
     }),
     // adapter: Object.keys(process.env).some(key => ['VERCEL', 'CF_PAGES', 'NETLIFY'].includes(key))
     //   ? adapterAuto()
