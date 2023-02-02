@@ -85,8 +85,5 @@
     "overrides": {
       "vite>rollup": "^3.10.0"
     }
-  },
-  "dependencies": {
-    "firebase": "^9.16.0"
   }
 }
