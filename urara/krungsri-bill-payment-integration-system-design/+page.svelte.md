@@ -62,7 +62,7 @@ typeOfPost: article
 
 成個過程就好似下面幅圖咁：
 
-![BAY Bill Payment](../../articles/krungsri-bill-payment-integration-system-design/bay-bill-payment.png)
+![BAY Bill Payment](../../krungsri-bill-payment-integration-system-design/bay-bill-payment.png)
 
 ## Example Repository
 
