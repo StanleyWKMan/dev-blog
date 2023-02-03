@@ -47,7 +47,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: URARA_SITE_DOMAIN='wingstako.deno.dev' pnpm build
+        run: URARA_SITE_DOMAIN='wingstako.dev' pnpm build
 
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
